@@ -21,10 +21,13 @@ A classic Snake game built in Java using Swing.
 ## Screenshots
 
 ### Start Screen
+![Start Screen](images/start-screen.png)
 
 ### Gameplay
+![Gameplay](images/gameplay-screen.png)
 
-### Gameover Screen
+### Game Over Screen
+![Game Over](images/game-over-screen.png)
 
 ## Technologies Used
 
@@ -34,6 +37,12 @@ A classic Snake game built in Java using Swing.
 
 ## How to Run
 
-1. Clone the repository.
-2. Open the project in IntelliJ IDEA.
-3. Run `Main.java`.
+1. Clone the repository:
+
+```bash
+git clone https://github.com/yourusername/snake-game-java.git
+```
+
+2. Open the project in your preferred Java IDE (such as IntelliJ IDEA, Eclipse, or VS Code), or compile it from the command line.
+
+3. Run `StartGame.java`..
