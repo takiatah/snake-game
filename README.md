@@ -2,6 +2,8 @@
 
 A classic Snake game built in Java using Swing.
 
+![Gameplay Demo](images/demo.gif)
+
 ## Features
 
 - Classic Snake gameplay
