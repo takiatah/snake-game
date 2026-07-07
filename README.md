@@ -39,7 +39,7 @@ A classic Snake game built in Java using Swing.
 
 ## How to Run
 
-First, make sure you have Java installed.
+First, make sure you have at least Java 23 installed.
 
 1. Clone the repository:
 
