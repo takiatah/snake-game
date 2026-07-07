@@ -39,6 +39,8 @@ A classic Snake game built in Java using Swing.
 
 ## How to Run
 
+First, make sure you have Java installed.
+
 1. Clone the repository:
 
 ```bash
@@ -48,3 +50,5 @@ git clone https://github.com/yourusername/snake-game-java.git
 2. Open the project in your preferred Java IDE (such as IntelliJ IDEA, Eclipse, or VS Code), or compile it from the command line.
 
 3. Run `StartGame.java`..
+
+Or download the `snake-game-1.0-SNAPSHOT.jar`.. file and open the file to run 
