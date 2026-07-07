@@ -1,9 +1,13 @@
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Random;
+
+import java.nio.file.Files;
+import java.nio.file.Path;
 
 public class SnakeGame extends JPanel implements ActionListener {
 
@@ -69,6 +73,7 @@ public class SnakeGame extends JPanel implements ActionListener {
 
         timer = new Timer(DELAY, this);
         spawnGoldTimer = new Timer(10000, this);
+        loadHighScore();
         initButtons();
         state = START;
     }
@@ -169,6 +174,15 @@ public class SnakeGame extends JPanel implements ActionListener {
 
         g.setColor(Color.red);
         g.fillOval(550, 525, 25, 25);
+
+        // draw header
+        g.setColor(new Color(55, 64, 59));
+        g.fillRect(0, 0, WIDTH, HEADER_HEIGHT);
+
+        // draw high score
+        g.setFont(new Font("Bahnschrift", Font.BOLD, 20));
+        g.setColor(Color.white);
+        g.drawString("High Score: " + highScore, 20, g.getFont().getSize());
 
     }
 
@@ -313,8 +327,31 @@ public class SnakeGame extends JPanel implements ActionListener {
             }
             if (foodEaten > highScore) {
                 highScore = foodEaten;
+                saveHighScore();
             }
             playAgainButton.setVisible(true);
+        }
+    }
+
+
+    public void loadHighScore() {
+        try {
+            Path path = Path.of("highscore.txt");
+
+            if (Files.exists(path)) {
+                highScore = Integer.parseInt(Files.readString(path).trim());
+            }
+        } catch (Exception e) {
+            highScore = 0;
+        }
+    }
+
+
+    public void saveHighScore() {
+        try {
+            Files.writeString(Path.of("highscore.txt"), String.valueOf(highScore));
+        } catch (Exception e) {
+            e.printStackTrace();
         }
     }
 
